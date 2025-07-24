@@ -19,11 +19,18 @@ function PostList({ modalIsVisible, hideModalHandler }) {
 					<NewPost onCancel={hideModalHandler} onAddPost={addPostHandler} />
 				</Modal>
 			)}
-			<ul className={styles.posts}>
+			{posts.length > 0 && <ul className={styles.posts}>
 				{posts.map((post,idx) => (
 					<Post author={post.author} body={post.body} key={idx} />
 				))}
-			</ul>
+			</ul>}
+			{posts.length === 0 && (
+				<div style={{textAlign:'center', color:'white'}}>
+					<h2>There are no Post yet.</h2>
+					<p>Lets start adding some!</p>
+				</div>
+			)}
+			
 		</>
 	)
 }

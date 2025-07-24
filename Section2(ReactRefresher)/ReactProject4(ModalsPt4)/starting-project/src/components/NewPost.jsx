@@ -4,7 +4,17 @@ import classes from './NewPost.module.css'
 function NewPost({ onCancel, onAddPost }) {
 	const [enteredBody, setEnteredBody] = useState('')
 	const [enteredAuthor, setEnteredAuthor] = useState('')
-
+	const sendData = (data)=>{
+		fetch('http://localhost:3000/posts', {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: {
+				'Content-type': 'application/json',
+			},
+		})
+			.then((res) => res.json())
+			.then(console.log)
+	}
 	const changeBodyHandler = (e) => {
 		setEnteredBody(e.target.value)
 	}
@@ -21,6 +31,7 @@ function NewPost({ onCancel, onAddPost }) {
 		}
 		console.log(postData)
 		onAddPost(postData)
+		sendData(postData)
 		onCancel()
 	}
 	console.log('1')
