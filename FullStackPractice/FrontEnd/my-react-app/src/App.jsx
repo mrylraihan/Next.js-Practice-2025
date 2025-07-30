@@ -1,28 +1,23 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-
+import Navbar from './components/Navbar'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
+import AddName from './components/AddName'
 
 function App() {
-  const [data, setData] = useState([])
-  useEffect(()=>{
-    fetch('http://localhost:3030/names')
-    .then(res=>res.json())
-    .then(setData)
-    .catch(console.error)
-  },[])
-  console.log(data)
+ 
 
   return (
-    <>
-     {data.length>0 && data.map(ele=>{
-        return (
-					<div key={ele.firstName}>
-						<h3>{`${ele.firstName} ${ele.lastName}`}</h3>
-						<p>{ele.age}</p>
-					</div>
-				)
-     })}
-    </>
+    <Router>
+    <Navbar/>
+    <Routes>
+      <Route path={'/'} element={<Home/>}/>
+      <Route path={'/about'} element={<About/>}/>
+      <Route path={'/add'} element={<AddName/>}/>
+    </Routes>
+    </Router>
   )
 }
 
