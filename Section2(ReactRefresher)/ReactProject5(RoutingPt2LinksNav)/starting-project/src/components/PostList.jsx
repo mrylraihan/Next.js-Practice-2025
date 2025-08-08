@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Post from './Post'
 import styles from './PostList.module.css'
-import NewPost from './NewPost'
-import Modal from './Modal'
-
-function PostList({ modalIsVisible, hideModalHandler }) {
+import {Outlet} from 'react-router-dom'
+function PostList() {
 	const [posts, setPosts] = useState([])
 	const [isLoading, setIsLoading] = useState(false)
 	// const isTrue = posts.length !== 0 ?true:false // different way of loading state
@@ -35,12 +33,7 @@ function PostList({ modalIsVisible, hideModalHandler }) {
 	console.log("POST:", posts)
 	return (
 		<>
-			{/* {modalContent} */}
-			{modalIsVisible && (
-				<Modal onClose={hideModalHandler}>
-					<NewPost onCancel={hideModalHandler} onAddPost={addPostHandler} />
-				</Modal>
-			)}
+			
 			{isLoading && (
 				<p style={{ textAlign: 'center', color: 'white' }}>
 					The Content is Loading....
