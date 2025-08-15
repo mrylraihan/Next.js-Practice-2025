@@ -5,12 +5,26 @@ import classes from './MainHeader.module.css'
 function MainHeader({ onCreatePost }) {
 	return (
 		<header className={classes.header}>
-			<h1 className={classes.logo}>
-				<MdMessage />
-				React Poster
-			</h1>
+			<Link to='/'>
+				<h1 className={classes.logo}>
+					<MdMessage />
+					React Poster
+				</h1>
+			</Link>
 			<p>
-				<Link to='/create-post' className={classes.button} onClick={onCreatePost}>
+				<Link
+					to='/about'
+					className={classes.button}
+					onClick={onCreatePost}>
+					<MdPostAdd size={18} />
+					About
+				</Link>
+			</p>
+			<p>
+				<Link
+					to='/create-post'
+					className={classes.button}
+					onClick={onCreatePost}>
 					<MdPostAdd size={18} />
 					New Post
 				</Link>

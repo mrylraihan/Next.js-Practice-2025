@@ -5,13 +5,14 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom' 
 import NewPost from './routes/NewPost'
 import RootLayout from './routes/RootLayout'
+import About from './components/About'
 
 const router = createBrowserRouter([
   {path:'/', element: <RootLayout/> , children:[
     {path:'/', element:<Posts/> , children:[
       {path:'/create-post', element:<NewPost/>}
     ]},
-    // {path:'/create-post', element:<NewPost/>},
+    {path:'/about', element:<About/>},
   ]},
 ])
 
