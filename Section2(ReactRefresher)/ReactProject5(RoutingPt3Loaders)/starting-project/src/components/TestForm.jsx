@@ -17,9 +17,10 @@ function TestForm() {
 			})
 		})
 	}
-	const removeAnotherForm = (idx) => {
+	const removeAnotherForm = ( idx) => {
+		// e.preventDefault()
 		setFormDataList((prev) => {
-			return prev.filter((ele, id) => id !== +idx)
+			return prev.filter((ele, id) => id != idx)
 		})
 	}
 	const onSubmitHandler = (e) => {
@@ -56,7 +57,7 @@ function TestForm() {
 									/>
 								</label>
 							</div>
-					<button type='click' onClick={() => removeAnotherForm(idx)}>-</button>
+					<button type='button' onClick={() => removeAnotherForm( idx)}>-</button>
 					</form>
 						</div>
 				)
