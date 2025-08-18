@@ -1,23 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Post from './Post'
 import styles from './PostList.module.css'
-import {Outlet} from 'react-router-dom'
+import {Outlet, useLoaderData} from 'react-router-dom'
 function PostList() {
-	const [posts, setPosts] = useState([])
-	const [isLoading, setIsLoading] = useState(false)
-	// const isTrue = posts.length !== 0 ?true:false // different way of loading state
-	// console.log("is True", isTrue)
-	useEffect(() => {
-		getData()
-	}, [])
-	const getData = async () => {
-		setIsLoading(true)
-		const res = await fetch('http://localhost:8080/posts')
-		const data = await res.json()
-		console.log(data)
-		setPosts(data.posts)
-		setIsLoading(false)
-	}
+	const loader = useLoaderData()
+
+
+	console.log("Loader Data PostList", loader)
+
 	const addPostHandler = (postData) => {
 		fetch('http://localhost:8080/posts', {
 			method: 'POST',
@@ -30,28 +20,16 @@ function PostList() {
 			.then(console.log)
 		setPosts((prev) => [postData, ...prev])
 	}
-	console.log("POST:", posts)
 	return (
 		<>
-			
-			{isLoading && (
-				<p style={{ textAlign: 'center', color: 'white' }}>
-					The Content is Loading....
-				</p>
-			)}
-			{/* {!isTrue && (
-				<p style={{ textAlign: 'center', color: 'white' }}>
-					The Content is Loading....
-				</p>
-			)} */}
-			{posts.length > 0 && (
+			{loader.posts.length > 0 && (
 				<ul className={styles.posts}>
-					{posts.map((post, idx) => (
+					{loader.posts.map((post, idx) => (
 						<Post author={post.author} body={post.body} key={idx} />
 					))}
 				</ul>
 			)}
-			{posts.length === 0 && (
+			{loader.posts.length === 0 && (
 				<div style={{ textAlign: 'center', color: 'white' }}>
 					<h2>There are no Post yet.</h2>
 					<p>Lets start adding some!</p>

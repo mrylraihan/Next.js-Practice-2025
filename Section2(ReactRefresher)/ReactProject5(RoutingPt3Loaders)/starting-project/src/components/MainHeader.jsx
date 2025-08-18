@@ -38,6 +38,15 @@ function MainHeader({ onCreatePost }) {
 					Test Form
 				</Link>
 			</p>
+			<p>
+				<Link
+					to='/loader-test'
+					className={classes.button}
+					onClick={onCreatePost}>
+					<MdPostAdd size={18} />
+					Test Loader
+				</Link>
+			</p>
 		</header>
 	)
 }
