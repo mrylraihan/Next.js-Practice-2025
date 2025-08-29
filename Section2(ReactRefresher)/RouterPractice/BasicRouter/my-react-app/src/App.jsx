@@ -9,6 +9,7 @@ import Second from './components/Second'
 import SecondItem from './components/SecondItem'
 import ThirdItem from './components/ThirdItem'
 import FourthItem from './components/FourthItem'
+import MForm from './components/MForm'
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
 				<Navbar />
 				<Routes>
 					<Route index element={<Home />} />
+					<Route path='/mform' element={<MForm />} />
 					<Route path='/list' element={<List />} />
 					<Route path='/list/:id' element={<Single />} />
 					<Route path='/about' element={<About />} />

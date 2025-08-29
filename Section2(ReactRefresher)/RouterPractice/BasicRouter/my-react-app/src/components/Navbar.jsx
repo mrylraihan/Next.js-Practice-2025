@@ -10,8 +10,8 @@ const Navbar = () => {
 				</Link>
 				<ul className='nav-menu'>
 					<li className='nav-item'>
-						<Link to='/' className='nav-links'>
-							Home
+						<Link to='/mform' className='nav-links'>
+							Multi-Form
 						</Link>
 					</li>
 					<li className='nav-item'>
