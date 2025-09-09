@@ -15,6 +15,11 @@ const Navbar = () => {
 						</Link>
 					</li>
 					<li className='nav-item'>
+						<Link to='/mform2' className='nav-links'>
+							Multi-Form 2
+						</Link>
+					</li>
+					<li className='nav-item'>
 						<Link to='/list' className='nav-links'>
 							List
 						</Link>
