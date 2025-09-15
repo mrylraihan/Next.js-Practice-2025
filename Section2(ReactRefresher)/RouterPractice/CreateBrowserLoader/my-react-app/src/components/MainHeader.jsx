@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 function MainHeader() {
+  const data = useLoaderData();
+  console.log(data, 'from main header');
   return (
     <div>
       <ul>
@@ -13,6 +15,9 @@ function MainHeader() {
         </Link>
         <Link to='/more'>
         <li>more</li>
+        </Link>
+        <Link to='/form1'>
+        <li>form 1</li>
         </Link>
       </ul>
     </div>

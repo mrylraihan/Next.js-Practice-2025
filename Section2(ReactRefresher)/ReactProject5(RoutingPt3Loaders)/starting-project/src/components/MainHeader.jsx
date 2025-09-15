@@ -11,7 +11,7 @@ function MainHeader({ onCreatePost }) {
 					React Poster
 				</h1>
 			</Link>
-			<p>
+			{/* <p>
 				<Link
 					to='/about'
 					className={classes.button}
@@ -19,7 +19,7 @@ function MainHeader({ onCreatePost }) {
 					<MdPostAdd size={18} />
 					About
 				</Link>
-			</p>
+			</p> */}
 			<p>
 				<Link
 					to='/create-post'
@@ -29,7 +29,7 @@ function MainHeader({ onCreatePost }) {
 					New Post
 				</Link>
 			</p>
-			<p>
+			{/* <p>
 				<Link
 					to='/test-form'
 					className={classes.button}
@@ -37,8 +37,8 @@ function MainHeader({ onCreatePost }) {
 					<MdPostAdd size={18} />
 					Test Form
 				</Link>
-			</p>
-			<p>
+			</p> */}
+			{/* <p>
 				<Link
 					to='/loader-test'
 					className={classes.button}
@@ -46,7 +46,7 @@ function MainHeader({ onCreatePost }) {
 					<MdPostAdd size={18} />
 					Test Loader
 				</Link>
-			</p>
+			</p> */}
 		</header>
 	)
 }

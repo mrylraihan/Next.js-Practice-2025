@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Post from './Post'
 import styles from './PostList.module.css'
 import {Outlet, useLoaderData} from 'react-router-dom'

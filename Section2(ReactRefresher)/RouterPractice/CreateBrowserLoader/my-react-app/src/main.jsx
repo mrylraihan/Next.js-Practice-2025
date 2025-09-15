@@ -6,12 +6,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './components/About.jsx'
 import More from './components/More.jsx'
 import Home from './components/Home.jsx'
-
+import Form1 from './components/Form1.jsx'
+import { formAction } from './components/action.jsx'
 const router = createBrowserRouter([
   {path:'/', element:<App/>, loader: loaderData, children:[
     {index:true, element:<Home/>},
     {path:'/about', element:<About/>},
-    {path:'/more', element:<More/>}
+    {path:'/more', element:<More/>}, 
+    {path:'/form1', element:<Form1/>, action:formAction},
   ]}
 ])
 
