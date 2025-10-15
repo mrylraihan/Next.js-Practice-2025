@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Form1, { action as formAction } from './components/Form1.jsx'
 import LoaderTest, { loader as loaderData } from './components/LoaderTest.jsx'
+import List from './components/List.jsx';
+import Single from './components/Single.jsx';
 
 const router = createBrowserRouter([
 	{
@@ -15,6 +17,8 @@ const router = createBrowserRouter([
 			{ index: true, element: <App /> },
 			{ path: '/form', element: <Form1 /> , action :formAction },
 			{ path: '/loader', element: <LoaderTest />, loader: loaderData },
+			{ path: '/list', element: <List /> },
+			{ path: '/list/:id', element: <Single /> },
 		],
 	},
 ])
