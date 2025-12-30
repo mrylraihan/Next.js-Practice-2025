@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
 
+export const metadata = {
+  title: 'In About Layout',
+  description: 'Your first NextJS app!',
+};
 function layout(props) {
   return (
     <div>
