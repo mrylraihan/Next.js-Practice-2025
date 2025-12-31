@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import Header from "./header";
+import Header from "@/components/header";
+
 // import { useRouter } from "next/navigation";
 
 export default function Home() {
