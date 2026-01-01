@@ -4,7 +4,8 @@ import Header from "@/components/header";
 
 // import { useRouter } from "next/navigation";
 
-export default function Home() {
+export default function Home(props) {
+  console.log("props App", props)
   // const router = useRouter();
   console.log("test");
   return (
@@ -13,6 +14,9 @@ export default function Home() {
       <Header/>
       <p>🔥 Let&apos;s get started! 🔥</p>
       <Link href={'/about'}><p>About us!</p></Link>
+      <Link href={'/blogU'}><p>BlogU</p></Link>
+      <Link href={'/blog'}><p>Blog</p></Link>
+      <Link href={'/post'}><p>post with useParams</p></Link>
       {/* <button onClick={()=>router.push('/about')}>Go to About</button> */}
     </main>
   );
