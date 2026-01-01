@@ -14,3 +14,8 @@ In a Next.js project using the App Router, a layout page is a reserved file (lay
 pages: n a Next.js project, a page is a reserved file (page.js) that defines the unique content and UI for a specific route, acting as the innermost component nested within your layouts. which is incharge of handling the render of what content on each page.
 
 92. how to use the children prop within a Layout to wrap multiple pages with shared UI elements, ensuring a consistent structure across different routes. and the difference between pages and components 
+
+93. Reserved File Names and what they are used for
+
+94. Dynamic Routes and how to configure with 2 different was using default page props and useParams.
+

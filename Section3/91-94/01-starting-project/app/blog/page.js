@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 function BlogPage(props) {
-    console.log(props)
+  console.log("BlogPage", props)
   return (
     <main>
         <h1>The Blog</h1>
