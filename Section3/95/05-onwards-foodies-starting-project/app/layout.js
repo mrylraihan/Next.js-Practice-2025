@@ -32,7 +32,7 @@ export default function RootLayout(props) {
             ></path>
           </svg>
         </div>
-        <Navbar/>
+        {/* <Navbar/> */}
         {children}
       </body>
     </html>
