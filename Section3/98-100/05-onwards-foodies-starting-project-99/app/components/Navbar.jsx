@@ -1,0 +1,36 @@
+import Link from "next/link";
+import React from "react";
+import logoImage from "@/assets/logo.png";
+import styles from './Navbar.module.css'
+function Navbar(props) {
+  console.log("Navbar", props)
+  return (
+    <header className={styles.header}>
+      <Link href="/" className={styles.logo}>
+        <img src={logoImage.src} alt="A plate with food on it" />
+        NextLevel Food
+      </Link>
+      <nav className={styles.nav}>
+        <ul>
+          <li>
+            <Link href="/meals">
+              Meals
+            </Link>
+          </li>
+          <li>
+            <Link href="/meals/share">
+            Share
+            </Link>
+          </li>
+          <li>
+            <Link href="/community">
+              community
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
+
+export default Navbar;
