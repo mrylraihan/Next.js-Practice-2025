@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import About from './components/About'
 import AddName from './components/AddName'
+import ListComps from './components/ListComps'
+import ListComps2 from './components/ListComps2'
 
 function App() {
  
@@ -12,9 +14,11 @@ function App() {
     <Router>
     <Navbar/>
     <Routes>
-      <Route path={'/'} element={<Home/>}/>
+      {/* <Route path={'/'} element={<Home/>}/>
       <Route path={'/about'} element={<About/>}/>
-      <Route path={'/add'} element={<AddName/>}/>
+      <Route path={'/add'} element={<AddName/>}/> */}
+      {/* <Route path={'/'} element={<ListComps/>} /> */}
+      <Route path={'/'} element={<ListComps2/>} />
     </Routes>
     </Router>
   )
