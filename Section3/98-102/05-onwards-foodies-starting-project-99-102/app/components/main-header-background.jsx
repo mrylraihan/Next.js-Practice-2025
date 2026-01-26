@@ -1,18 +1,8 @@
-import Navbar from './components/Navbar';
-import './globals.css';
-
-export const metadata = {
-  title: 'NextLevel Food',
-  description: 'Delicious meals, shared by a food-loving community.',
-};
-
-export default function RootLayout(props) {
-  const {children} = props
-  console.log(props)
+import React from 'react'
+import styles from './main-header-background.module.css'
+function MainHeaderBackground() {
   return (
-    <html lang="en">
-      <body>
-        <div className="header-background">
+    <div className={styles.headerBackground}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -32,10 +22,7 @@ export default function RootLayout(props) {
             ></path>
           </svg>
         </div>
-        <Navbar/>
-        <h1>Meals website</h1>
-        {children}
-      </body>
-    </html>
-  );
+  )
 }
+
+export default MainHeaderBackground

@@ -2,7 +2,7 @@ import React from 'react'
 
 function layout({children}) {
   return (
-    <div>
+    <div style={{border:"solid red 1px"}}>
       <h1>Meals Layout</h1>
       <div>
         {children}
