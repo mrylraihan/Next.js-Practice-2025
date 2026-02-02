@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 4000;
 const mongoose = require('mongoose');
 const cors = require('cors')
 // Connect to MongoDB
@@ -18,6 +18,10 @@ app.use('/people', peopleRouter);
 app.get('/', (req, res) => {
   res.json({message: 'Hello World!'});
 });
+
+app.use((req, res)=>{
+  res.status(404).json({message: 'Route not found'});
+})
 
 // Start the server
 app.listen(port, () => {
