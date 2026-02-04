@@ -33,6 +33,7 @@ export default function ImageSlideshow() {
 
     return () => clearInterval(interval);
   }, []);
+
 console.log("currentImageIndex", currentImageIndex)
   return (
     <div className={classes.slideshow}>
