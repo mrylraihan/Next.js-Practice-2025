@@ -1,0 +1,78 @@
+.blogContainer {
+  padding: 2rem;
+}
+
+.blogList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.blogCard {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.blogCard h3 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.blogCard:hover h3 {
+  color: #667eea;
+}
+
+.blogCard p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.readMore {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.readMore:hover {
+  color: #764ba2;
+}
+
+@media (max-width: 768px) {
+  .blogList {
+    grid-template-columns: 1fr;
+  }
+
+  .blogCard {
+    padding: 1.25rem;
+  }
+
+  .blogCard h3 {
+    font-size: 1.1rem;
+  }
+}
