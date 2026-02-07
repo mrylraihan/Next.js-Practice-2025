@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './main-header-background.module.css'
 function MainHeaderBackground() {
-  console.log("Main Header Background")
+  // console.log("Main Header Background")
   return (
     <div className={styles.headerBackground}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

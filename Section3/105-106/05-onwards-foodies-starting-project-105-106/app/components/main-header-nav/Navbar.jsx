@@ -4,9 +4,10 @@ import logoImage from "@/assets/logo.png";
 import styles from './Navbar.module.css'
 import Image from "next/image";
 import MainHeaderBackground from "./main-header-background";
+import NavLink from "./nav-link";
 
-function Navbar(props) {
-  console.log("Navbar", props)
+function Navbar() {
+
   return (
     <>
     <MainHeaderBackground/>
@@ -18,23 +19,14 @@ function Navbar(props) {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <Link href="/meals">
-              Meals
-            </Link>
+            <NavLink href="/meals">Browse Meals</NavLink>
           </li>                                          
           <li>
-            <Link href="/meals/share">
-            Share
-            </Link>
-          </li>
-          <li>
-            <Link href="/community">
-              community
-            </Link>
+              <NavLink href="/community">Foodies Community</NavLink>
           </li>
         </ul>
       </nav>
-       <Image src={logoImage} alt="A plate with food on it"  width={80} height={80} />
+       {/* <Image src={logoImage} alt="A plate with food on it"  width={80} height={80} /> */}
     </header>
     </>
   );
