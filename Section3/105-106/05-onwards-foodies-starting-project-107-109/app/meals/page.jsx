@@ -1,8 +1,19 @@
 import Link from 'next/link'
 import styles from './page.module.css'
 import MealsGrid from '../components/meals/meals-grid'
+import { getAllMeals, getBlogs } from '@/lib/meals'
+// import { useEffect } from 'react'
 
-function MealsPage() {
+async function MealsPage() {
+  // because this is a server component, we can not use useEffect here. So we need to fetch the data from the server and pass it to the component as props.
+
+  // useEffect(()=>{
+  //   fetch('/api/initdb')
+  // },[])
+  const meals = await getAllMeals()
+  console.log("meals from db",meals)
+  const blogs = await getBlogs()
+  console.log("blogs from api",blogs)
     
   return (
     <div>
@@ -16,7 +27,7 @@ function MealsPage() {
         </p>
       </header>
       <main className={styles.main}>
-        <MealsGrid meals={[]} />
+        <MealsGrid meals={meals} />
       </main>
     </div>
   )

@@ -1,6 +1,7 @@
 const sql = require('better-sqlite3');
 const db = sql('meals.db');
 
+// db.prepare('DELETE FROM meals').run();
 const dummyMeals = [
   {
     title: 'Juicy Cheese Burger',
