@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './page.module.css'
 import MealsGrid from '../components/meals/meals-grid'
-import { getAllMeals, getBlogs, getBlogsNoAsync, getBlogsWithDelay } from '@/lib/meals'
+import { getAllMeals, getBlogs, getBlogsNoAsync } from '@/lib/meals'
 // import { useEffect } from 'react'
 
 async function MealsPage() {
@@ -12,14 +12,10 @@ async function MealsPage() {
   // },[])
   const meals = await getAllMeals()
   console.log("meals from db",meals)
-  // const blogsAwait = await getBlogs()
-  // console.log("blogs from api",blogsAwait)
-  // const blogs = await getBlogsNoAsync()
-  // console.log("blogs from api await", blogs)
-  // let blogsWithDelay = await getBlogsWithDelay()
-  // blogsWithDelay = await blogsWithDelay.json()
-
-  // console.log("blogs with delay", blogsWithDelay)
+  const blogsAwait = await getBlogs()
+  console.log("blogs from api",blogsAwait)
+  const blogs = await getBlogsNoAsync()
+  console.log("blogs from api await", blogs)
     
   return (
     <div>

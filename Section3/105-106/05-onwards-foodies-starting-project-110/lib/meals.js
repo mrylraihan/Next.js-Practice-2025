@@ -60,9 +60,6 @@ export async function getBlogs(){
 }
 export function getBlogsNoAsync(){
     return  fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json()) 
-}
-
-export function getBlogsWithDelay(){
-  return fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+        
 }

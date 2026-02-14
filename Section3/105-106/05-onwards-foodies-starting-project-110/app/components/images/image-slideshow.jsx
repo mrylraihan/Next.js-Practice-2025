@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
@@ -34,6 +34,7 @@ export default function ImageSlideshow() {
     return () => clearInterval(interval);
   }, []);
 
+console.log("currentImageIndex", currentImageIndex)
   return (
     <div className={classes.slideshow}>
       {images.map((image, index) => (
