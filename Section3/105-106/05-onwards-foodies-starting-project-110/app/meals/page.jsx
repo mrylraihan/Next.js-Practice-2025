@@ -1,21 +1,30 @@
 import Link from 'next/link'
 import styles from './page.module.css'
 import MealsGrid from '../components/meals/meals-grid'
-import { getAllMeals, getBlogs, getBlogsNoAsync } from '@/lib/meals'
+import { getAllMeals } from '@/lib/meals'
+import Meal from './[meals-id]/page'
+import { Suspense } from 'react'
+import Loadings from './loading-out'
 // import { useEffect } from 'react'
 
-async function MealsPage() {
+async function Meals(){
+  const meals = await getAllMeals()
+  console.log("meals from db",meals)
+  return   <MealsGrid meals={meals} />
+}
+
+function MealsPage() {
   // because this is a server component, we can not use useEffect here. So we need to fetch the data from the server and pass it to the component as props.
 
   // useEffect(()=>{
   //   fetch('/api/initdb')
   // },[])
-  const meals = await getAllMeals()
-  console.log("meals from db",meals)
-  const blogsAwait = await getBlogs()
-  console.log("blogs from api",blogsAwait)
-  const blogs = await getBlogsNoAsync()
-  console.log("blogs from api await", blogs)
+  // const meals = await getAllMeals()
+  // console.log("meals from db",meals)
+  // const blogsAwait = await getBlogs()
+  // console.log("blogs from api",blogsAwait)
+  // const blogs = await getBlogsNoAsync()
+  // console.log("blogs from api await", blogs)
     
   return (
     <div>
@@ -29,7 +38,10 @@ async function MealsPage() {
         </p>
       </header>
       <main className={styles.main}>
-        <MealsGrid meals={meals} />
+        <Suspense fallback={<Loadings/>}>
+        <Meals /> 
+        </Suspense >
+        {/* <MealsGrid meals={meals} /> */}
       </main>
     </div>
   )
