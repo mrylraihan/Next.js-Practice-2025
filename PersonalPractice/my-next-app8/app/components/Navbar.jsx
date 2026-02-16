@@ -11,6 +11,7 @@ function Navbar() {
         <Link href="/about" className={styles.navLink}><li>About</li></Link>
         <Link href="/services" className={styles.navLink}><li>Services</li></Link>
         <Link href="/contact" className={styles.navLink}><li>Contact</li></Link>
+        <Link href="/kanye" className={styles.navLink}><li>Kanye</li></Link>
       </ul>
     </nav>
   )
