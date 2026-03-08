@@ -1,11 +1,22 @@
 "use client"
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import classes from "./image-picker.module.css";
 
 function ImagePicker({ label, name }) {
+
+  const [pickImage, setPickImage] = useState();
     const imageInputRef = useRef();
-    const handlePickClick = () => {
+    const handlePickClick = (e) => {
+      imageInputRef.current.click()
       console.log("Open Sesame")
+      // console.log(imageInputRef.current.files[0])
+    }
+    const handleImageChange = (event) => {
+      imageInputRef.current.click()
+      const file = event.target.files[0];
+      if (file) {
+        setPickImage(file);
+      }
     }
   return (
     <div className={classes.picker}>
@@ -18,6 +29,7 @@ function ImagePicker({ label, name }) {
           name={name}
           className={classes.input}
           ref={imageInputRef}
+          onChange={handleImageChange}
         />
         <button type="button" className={classes.button} onClick={handlePickClick}>Choose Image</button>   
       </div>
