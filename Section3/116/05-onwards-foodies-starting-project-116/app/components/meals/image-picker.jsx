@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef, useState } from "react";
 import classes from "./image-picker.module.css";
+import Image from "next/image";
 
 function ImagePicker({ label, name }) {
 
@@ -9,19 +10,29 @@ function ImagePicker({ label, name }) {
     const handlePickClick = (e) => {
       imageInputRef.current.click()
       console.log("Open Sesame")
-      // console.log(imageInputRef.current.files[0])
     }
     const handleImageChange = (event) => {
-      imageInputRef.current.click()
       const file = event.target.files[0];
-      if (file) {
-        setPickImage(file);
+      console.log(file)
+      if (!file) {
+        return;
       }
+      const fileReader = new FileReader();
+      fileReader.onload = () => {
+        console.log(fileReader.result)
+        setPickImage(fileReader.result);
+      }
+      fileReader.readAsDataURL(file);
+      
     }
   return (
     <div className={classes.picker}>
       <label htmlFor={name}>{label}</label>
       <div className={classes.controls}>
+        <div className={classes.preview}>
+          {pickImage && <Image src={pickImage} alt="Preview" fill/>}
+          {!pickImage && <p>No image selected......</p>}
+        </div>
         <input
           type="file"
           id={name}
@@ -31,7 +42,9 @@ function ImagePicker({ label, name }) {
           ref={imageInputRef}
           onChange={handleImageChange}
         />
-        <button type="button" className={classes.button} onClick={handlePickClick}>Choose Image</button>   
+        <button type="button" 
+        className={classes.button} 
+        onClick={handlePickClick}>Choose Image</button>   
       </div>
     </div>
   );
