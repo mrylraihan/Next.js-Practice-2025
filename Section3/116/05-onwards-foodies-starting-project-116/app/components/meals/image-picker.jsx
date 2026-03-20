@@ -15,6 +15,7 @@ function ImagePicker({ label, name }) {
       const file = event.target.files[0];
       console.log(file)
       if (!file) {
+        setPickedImage(null);
         return;
       }
       const fileReader = new FileReader();
@@ -25,6 +26,32 @@ function ImagePicker({ label, name }) {
       fileReader.readAsDataURL(file);
       
     }
+
+// const handleImageChange = (event) => {
+//   const files = event.target.files;
+
+//   if (!files || files.length === 0) return;
+
+//   const images = [];
+
+//   Array.from(files).forEach((file) => {
+//     if (!(file instanceof Blob)) return; // extra safety
+
+//     const reader = new FileReader();
+
+//     reader.onload = () => {
+//       images.push(reader.result);
+
+//       // when all files are read
+//       if (images.length === files.length) {
+//         setPickImage(images); // array of images
+//       }
+//     };
+
+//     reader.readAsDataURL(file);
+//   });
+// };
+
   return (
     <div className={classes.picker}>
       <label htmlFor={name}>{label}</label>
@@ -39,8 +66,10 @@ function ImagePicker({ label, name }) {
           accept="image/png, image/jpeg"
           name={name}
           className={classes.input}
+          multiple
           ref={imageInputRef}
           onChange={handleImageChange}
+          required
         />
         <button type="button" 
         className={classes.button} 
