@@ -13,6 +13,7 @@ function Navbar() {
         <Link href="/contact" className={styles.navLink}><li>Contact</li></Link>
         <Link href="/kanye" className={styles.navLink}><li>Kanye</li></Link>
         <Link href="/kanye2" className={styles.navLink}><li>Kanye2</li></Link>
+        <Link href="/form-test" className={styles.navLink}><li>Form-test</li></Link>
       </ul>
     </nav>
   )
