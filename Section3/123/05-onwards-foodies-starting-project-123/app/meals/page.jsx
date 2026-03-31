@@ -24,7 +24,7 @@ function MealsPage() {
   // console.log("blogs from api",blogsAwait)
   // const blogs = await getBlogsNoAsync()
   // console.log("blogs from api await", blogs)
-    
+    console.log("rendering meals page")
   return (
     <div>
       <header className={styles.header}>

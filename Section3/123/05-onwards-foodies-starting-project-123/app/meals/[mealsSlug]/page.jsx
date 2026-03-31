@@ -4,9 +4,11 @@ import { getMealBySlug } from '@/lib/meals'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
+
 async function Meal({params}) {
-    console.log("params",params)
-    let data = await getMealBySlug(params.mealsSlug)
+  const paramsData = await params
+  console.log("paramsData",paramsData)
+    let data = await getMealBySlug(paramsData.mealsSlug)
     console.log("data", data)
 
     if(!data){
