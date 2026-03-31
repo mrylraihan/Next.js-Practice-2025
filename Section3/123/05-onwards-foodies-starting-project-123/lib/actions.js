@@ -26,6 +26,7 @@ export async function shareMeal(formData) {
 		!mealData.creator_email.includes('@') ||
 		mealData.image.size === 0
 	) {
+		console.log('Invalid meal data:', mealData)
 		throw new Error('Invalid meal data')
 	}
 	console.log(mealData)
