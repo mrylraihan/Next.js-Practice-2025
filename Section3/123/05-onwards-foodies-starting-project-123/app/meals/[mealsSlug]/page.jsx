@@ -4,6 +4,25 @@ import { getMealBySlug } from '@/lib/meals'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
+// export const metadata = {
+//   title: 'Meal Details',
+//   description: 'Details of the selected meal',
+// }
+// how to add metadata dynamically based on the meal that we are fetching from the database? We can use the generateMetadata function, which is a special function that Next.js will call when it is generating the metadata for the page. We can fetch the meal data in this function and return the metadata based on that data.
+export async function generateMetadata({params}){
+  const paramsData = await params
+  console.log("paramsData in generateMetadata",paramsData)
+  const meal = await getMealBySlug(paramsData.mealsSlug)
+  if(!meal){
+   notFound()
+  }else{
+      return {
+        title:meal.title,
+        description:meal.summary
+      }
+    }
+}
+
 
 async function Meal({params}) {
   const paramsData = await params
