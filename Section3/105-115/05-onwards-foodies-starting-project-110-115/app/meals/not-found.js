@@ -4,7 +4,7 @@ function NotFound() {
   return (
     <main className='not-found'>
       <h1>Meal not found</h1>
-      <p>Unfortanley we couldnt find the requested page or meals data</p>   
+      <p>Unfortunately we could not find the requested page or meals data</p>   
     </main>
   )
 }

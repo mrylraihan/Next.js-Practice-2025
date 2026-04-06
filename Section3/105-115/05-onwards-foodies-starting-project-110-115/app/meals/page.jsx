@@ -29,7 +29,7 @@ function MealsPage() {
     <div>
       <header className={styles.header}>
         <h1>
-          Delcious meals, create <span className={styles.highlight}>by you</span>
+          Delicious meals, create <span className={styles.highlight}>by you</span>
         </h1>
         <p>Choose your favorite recipe and cook it yourself. It is easy and fun!</p>
         <p className={styles.cta}>
