@@ -14,6 +14,13 @@ function Navbar() {
 			<Link href='/blogs-client'>
 				<p>client side</p>
 			</Link>
+			<Link href='/form-test'>
+				<p>Testing useActionState</p>
+			</Link>
+			<Link href='/form-test2'>
+				<p>Testing State</p>
+			</Link>
+			
 		</div>
 	)
 }
