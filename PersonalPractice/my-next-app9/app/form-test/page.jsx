@@ -11,7 +11,7 @@ const formSubmitAction = async(prevState, formData)=>{
 }
 
 function FormTest() {
-    const [state, formAction] = useActionState(formSubmitAction, {firstName: "initial state", lastName: "initial state", address: "initial state"})
+    const [state, formAction] = useActionState(formSubmitAction, {firstName: "initial state", lastName: "initial state",})
 
     console.log("state", state) 
 

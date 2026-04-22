@@ -20,6 +20,9 @@ function Navbar() {
 			<Link href='/form-test2'>
 				<p>Testing State</p>
 			</Link>
+			<Link href='/form-test3'>
+				<p>Testing 3</p>
+			</Link>
 			
 		</div>
 	)
