@@ -15,6 +15,9 @@ function MainHeader() {
 					<li>
 						<Link href='/archive'>Archived</Link>
 					</li>
+					<li>
+						<Link href='/superHuman'>Super</Link>
+					</li>
 				</ul>
 			</nav>
 		</header>
