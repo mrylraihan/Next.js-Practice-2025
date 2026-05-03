@@ -1,0 +1,10 @@
+.maindiv{
+    display: flex;
+    border: 1px solid red;
+}
+.maindi2{
+    color: red;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+}
