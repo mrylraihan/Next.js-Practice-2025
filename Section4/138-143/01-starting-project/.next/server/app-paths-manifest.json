@@ -1,9 +1,7 @@
-<<<<<<< Updated upstream:Section4/138-143/01-starting-project/.next/server/app-paths-manifest.json
 {
-  "/news/[id]/page": "app/news/[id]/page.js",
+  "/page": "app/page.js",
+  "/CatchAll/[...slug]/page": "app/CatchAll/[...slug]/page.js",
+  "/not-found": "app/not-found.js",
   "/icon.jpg/route": "app/icon.jpg/route.js",
-  "/archive/@archive/[[...filter]]/page": "app/archive/@archive/[[...filter]]/page.js"
+  "/CatchAll/page": "app/CatchAll/page.js"
 }
-=======
-{}
->>>>>>> Stashed changes:Section4/138-139/01-starting-project/.next/server/app-paths-manifest.json

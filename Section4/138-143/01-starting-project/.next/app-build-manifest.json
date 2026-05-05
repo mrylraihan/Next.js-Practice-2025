@@ -16,30 +16,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/archive/layout": [
+    "/CatchAll/[...slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/archive/layout.js"
+      "static/chunks/app/CatchAll/[...slug]/page.js"
     ],
-    "/archive/@latest/default": [
+    "/CatchAll/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/archive/@latest/default.js"
-    ],
-    "/archive/@archive/[[...filter]]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/archive/@archive/[[...filter]]/page.js"
-    ],
-    "/news/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/news/not-found.js"
-    ],
-    "/news/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/news/[id]/page.js"
+      "static/chunks/app/CatchAll/page.js"
     ]
   }
 }
