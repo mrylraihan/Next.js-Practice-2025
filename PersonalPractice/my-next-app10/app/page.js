@@ -1,18 +1,34 @@
 "use client"
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { nameActions } from "@/store";
 
 
-const getData = (prev, formData)=>{
-  console.log("prev:", prev)
-  const object = Object.fromEntries(formData)
-  console.log("after:",object)
-  return object
-}
+// const getData = (prev, formData)=>{
+// 	console.log("prev:", prev)
+// 	const object = Object.fromEntries(formData)
+// 	console.log("after:",object)
+// 	return object
+// }
 
 export default function Home() {
-  const [data, actionHandler] = useActionState(getData, {message:"Hello"})
+	const selector = useSelector(state=>state)
+	const dispatch = useDispatch()
+	
+	const getData = async (prev, formData) => {
+		console.log('prev:', prev)
+		const object = Object.fromEntries(formData)
+		console.log('after:', object)
+		dispatch(nameActions.getFormData(object)) 
+		
+		return object
+	}
+
+	const [data, actionHandler] = useActionState(getData, {message:"Hello"})
+	
+  console.log("selector:", selector)
   return (
 		<div className={styles.page} style={{ border: '1px solid blue' }}>
 			<main className={styles.main}>
