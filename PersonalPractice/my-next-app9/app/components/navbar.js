@@ -23,6 +23,9 @@ function Navbar() {
 			<Link href='/form-test3'>
 				<p>Testing 3</p>
 			</Link>
+			<Link href='/bats'>
+				<p>Bats</p>
+			</Link>
 			
 		</div>
 	)
