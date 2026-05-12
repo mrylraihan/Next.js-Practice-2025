@@ -193,3 +193,14 @@ ul {
   text-align: center;
   margin-top: 3rem;
 }
+
+.fullscreen-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-image img {
+  max-width: 100%;
+  height: auto;
+}

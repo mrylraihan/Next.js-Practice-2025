@@ -10,7 +10,7 @@ function NewsDetailPage({ params }) {
 	const newsItem = DUMMY_NEWS.find((newsItem) => newsItem.slug === newsId)
 	console.log("newsItem", newsItem)
 	if(!newsItem) {
-		return notFound()
+	  notFound()
 	}
 	console.log(newsItem)
 	return (
