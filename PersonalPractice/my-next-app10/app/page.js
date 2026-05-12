@@ -1,9 +1,9 @@
 "use client"
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useActionState, useEffect } from "react";
+import { useActionState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { nameActions } from "@/store";
+import { nameActions } from '../store/nameslice';
 
 
 // const getData = (prev, formData)=>{
@@ -14,7 +14,7 @@ import { nameActions } from "@/store";
 // }
 
 export default function Home() {
-	const selector = useSelector(state=>state)
+	const selector = useSelector(state=>state.nameSlice)
 	const dispatch = useDispatch()
 	
 	const getData = async (prev, formData) => {
