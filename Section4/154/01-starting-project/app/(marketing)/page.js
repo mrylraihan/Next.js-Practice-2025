@@ -1,7 +1,17 @@
+'use client'
 import logo from '@/assets/logo.jpg'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 export default function HomePage() {
+
+	useEffect(()=>{
+		fetch('/api/hello')
+		.then(res=>res.json())
+		.then(console.log)
+		.catch(console.error)
+	},[])
+
 	return (
 		<div id='home'>
 			<img src={logo.src} alt='A newspaper' />
