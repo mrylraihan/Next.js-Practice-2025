@@ -1,4 +1,4 @@
-// File: /Users/wayelraihan/Desktop/Code/Frontend-Practice/Next.js-Practice-2025/Section4/147/01-starting-project/app/news/[id]/layout.jsx
+// File: /Users/wayelraihan/Desktop/Code/Frontend-Practice/Next.js-Practice-2025/Section4/147-149/01-starting-project/app/news/[id]/layout.jsx
 import * as entry from '../../../../../app/news/[id]/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
