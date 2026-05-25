@@ -7,6 +7,10 @@ const GetNewsData = async () => {
 	// const data = await fetch('http://localhost:8000/news');
 	const news = await data.json();
 	await new Promise(resolve => setTimeout(resolve, 2000));
+	if (!data.ok) {
+		throw new Error('Failed to fetch news data')
+	}
+
 	return <NewListComp news={news} />
 }	
 

@@ -11,15 +11,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(content)/not-found.js"
     ],
+    "/(content)/news/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/news/page.js"
+    ],
     "/(content)/news/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(content)/news/not-found.js"
     ],
-    "/(content)/news/page": [
+    "/(content)/error": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(content)/news/page.js"
+      "static/chunks/app/(content)/error.js"
     ],
     "/not-found": [
       "static/chunks/webpack.js",

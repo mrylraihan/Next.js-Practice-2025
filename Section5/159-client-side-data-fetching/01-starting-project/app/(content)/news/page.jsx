@@ -4,12 +4,12 @@ import NewListComp from '@/components/news-list'
 
 
 function NewsPage() {
-	const [loading, setLoading] = useState(true)
+	const [loading, setLoading] = useState(false)
 	const [news, setNews] = useState([])
 	const [error, setError] = useState(null)
 	useEffect(() => {
-		setLoading(true)
 		const getData = async () => {
+			setLoading(true)
 			const data = await fetch('http://localhost:3000/api/news')
 			// const data = await fetch('http://localhost:8000/news')
 			if(!data.ok){
@@ -18,9 +18,9 @@ function NewsPage() {
 			}
 			const news = await data.json()
 			setNews(news)
+			setLoading(false)
 		}
 		getData()
-		setLoading(false)
 	}, [])
 	return (
 		<>
