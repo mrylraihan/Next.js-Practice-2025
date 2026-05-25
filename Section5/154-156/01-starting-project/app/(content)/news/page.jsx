@@ -1,14 +1,25 @@
-import React from 'react'
-import { DUMMY_NEWS } from '@/dummy-news'
+import React, { Suspense } from 'react'
 import NewListComp from '@/components/news-list'
 
-function NewsPage() {
-	console.log(DUMMY_NEWS)
+const GetNewsData = async () => {
+	const data = await fetch('http://localhost:3000/api/news')
+	const news = await data.json();
+	await new Promise((resolve) => setTimeout(resolve, 9000));
+	return (
+		<>
+			<NewListComp news={news} />
+		</>
+	)
+}	
+
+async function NewsPage() {
 	
 	return (
 		<>
 			<h1>News Page</h1>
-			<NewListComp news={DUMMY_NEWS} />
+			<Suspense fallback={<>...loading</>}>
+			<GetNewsData />
+			</Suspense>
 		</>
 	)
 }
