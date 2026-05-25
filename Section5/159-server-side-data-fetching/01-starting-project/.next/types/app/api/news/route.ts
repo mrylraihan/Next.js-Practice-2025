@@ -1,4 +1,4 @@
-// File: /Users/wayelraihan/Desktop/Code/Frontend-Practice/Next.js-Practice-2025/Section5/154-156/01-starting-project/app/api/news/route.js
+// File: /Users/wayelraihan/Desktop/Code/Frontend-Practice/Next.js-Practice-2025/Section5/159-server-side-data-fetching/01-starting-project/app/api/news/route.js
 import * as entry from '../../../../../app/api/news/route.js'
 import type { NextRequest } from 'next/server.js'
 

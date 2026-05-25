@@ -2,12 +2,14 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   useEffect(() => {
     fetch("/api/hello")
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err));
   },[])
 
   return (
@@ -67,6 +69,14 @@ export default function Home() {
           >
             Documentation
           </a>
+          <Link
+            className={styles.secondary}
+            href="/testsus"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Suspense Component
+          </Link>
         </div>
       </main>
     </div>

@@ -1,8 +1,10 @@
+import { NextResponse } from "next/server";
+
 export async function GET() {
 const data = await fetch('http://localhost:8000/news');
 const news = await data.json();
 
-return  Response.json(news)
+return  NextResponse.json(news)
 }
 // export async function GET() {
 // const data = await fetch('http://localhost:8000/news');

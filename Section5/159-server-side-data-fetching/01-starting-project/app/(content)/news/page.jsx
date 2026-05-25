@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import NewListComp from '@/components/news-list'
+import NewsNotFound from '../News-Not-Found';
 
-const getNewsData = async () => {
-	const data = await fetch('http://localhost:8000/news');
+const GetNewsData = async () => {
+	const data = await fetch('http://localhost:3000/api/news')
+	// const data = await fetch('http://localhost:8000/news');
 	const news = await data.json();
-	return news;
+	await new Promise(resolve => setTimeout(resolve, 2000));
+	return <NewListComp news={news} />
 }	
 
 async function NewsPage() {
-	const news = await getNewsData();
+	
 	return (
 		<>
 			<h1>News Page</h1>
-			<NewListComp news={news} />
+			<Suspense fallback={<NewsNotFound/>}>
+			<GetNewsData />
+			</Suspense>
 		</>
 	)
 }

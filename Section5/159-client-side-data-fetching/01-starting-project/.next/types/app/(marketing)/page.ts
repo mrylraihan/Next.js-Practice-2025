@@ -1,4 +1,4 @@
-// File: /Users/wayelraihan/Desktop/Code/Frontend-Practice/Next.js-Practice-2025/Section5/154-156/01-starting-project/app/(marketing)/page.js
+// File: /Users/wayelraihan/Desktop/Code/Frontend-Practice/Next.js-Practice-2025/Section5/159-client-side-data-fetching/01-starting-project/app/(marketing)/page.js
 import * as entry from '../../../../app/(marketing)/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
