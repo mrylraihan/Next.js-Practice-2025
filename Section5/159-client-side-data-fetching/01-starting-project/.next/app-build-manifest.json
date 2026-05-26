@@ -11,16 +11,16 @@
       "static/css/app/(marketing)/layout.css",
       "static/chunks/app/(marketing)/layout.js"
     ],
+    "/(content)/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/not-found.js"
+    ],
     "/(content)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/(content)/layout.css",
       "static/chunks/app/(content)/layout.js"
-    ],
-    "/(content)/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(content)/not-found.js"
     ],
     "/(content)/news/page": [
       "static/chunks/webpack.js",
@@ -32,10 +32,50 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(content)/news/not-found.js"
     ],
-    "/not-found": [
+    "/(content)/archive/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/app/(content)/archive/layout.js"
+    ],
+    "/(content)/archive/@latest/default": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/archive/@latest/default.js"
+    ],
+    "/(content)/archive/@archive/[[...filter]]/error": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/archive/@archive/[[...filter]]/error.js"
+    ],
+    "/(content)/archive/@archive/[[...filter]]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/archive/@archive/[[...filter]]/page.js"
+    ],
+    "/(content)/superHuman/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/superHuman/page.js"
+    ],
+    "/(content)/superHuman/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/superHuman/layout.js"
+    ],
+    "/(content)/superHuman/@villain/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/superHuman/@villain/page.js"
+    ],
+    "/(content)/superHuman/@hero/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/superHuman/@hero/page.js"
+    ],
+    "/(content)/superHuman/@hero/[heroName]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(content)/superHuman/@hero/[heroName]/page.js"
     ]
   }
 }

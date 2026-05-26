@@ -10,7 +10,8 @@ function NewsPage() {
 	useEffect(() => {
 		const getData = async () => {
 			setLoading(true)
-			const data = await fetch('http://localhost:3000/api/news')
+			const data = await fetch('/api/news')
+			// const data = await fetch('http://localhost:3000/api/news')
 			// const data = await fetch('http://localhost:8000/news')
 			if(!data.ok){
 				setError('Failed to fetch news')
