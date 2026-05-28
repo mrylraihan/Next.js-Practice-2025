@@ -16,29 +16,44 @@ const DUMMY_Chair = [
     { id: 3, name: 'human-scale', price: 35 },
 ]
 
+const DUMMY_People = [
+    { id: 1, name: 'Alice', age: 30 },
+    { id: 2, name: 'Bob', age: 25 },
+    { id: 3, name: 'Charlie', age: 35 },
+]
+
 function initDb() {
   db.exec(
     'DROP TABLE IF EXISTS chairs;'
   );
   db.exec(
+    'DROP TABLE IF EXISTS people;'
+  );
+  db.exec(
     'CREATE TABLE IF NOT EXISTS chairs (id INTEGER PRIMARY KEY, name TEXT, price INTEGER)'
   );
-//   db.exec(
-//     'CREATE TABLE IF NOT EXISTS people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)'
-//   );
-//   db.prepare(
-//     'CREATE TABLE IF NOT EXISTS people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)'
-//   ).run();
+  db.exec(
+    'CREATE TABLE IF NOT EXISTS people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)'
+  );
+  // db.prepare(
+  //   'CREATE TABLE IF NOT EXISTS people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)'
+  // ).run();
 
   const { count } = db.prepare('SELECT COUNT(*) as count FROM chairs').get();
 
   if (count === 0) {
-    const insert = db.prepare(
+    const insertChairs = db.prepare(
       'INSERT INTO chairs (name, price) VALUES (?, ?)'
+    );
+    const insertPeople = db.prepare(
+      'INSERT INTO people (name, age) VALUES (?, ?)'
     );
 
     DUMMY_Chair.forEach((chair) => {
-      insert.run(chair.name, chair.price);
+      insertChairs.run(chair.name, chair.price);
+    });
+    DUMMY_People.forEach((people) => {
+      insertPeople.run(people.name, people.age);
     });
   }
 }
@@ -53,6 +68,10 @@ app.get('/', (req, res) => {
 app.get('/chair', (req, res) => {
     const chairs = db.prepare('SELECT * FROM chairs').all()
     res.json(chairs)
+})
+app.get('/people', (req, res) => {
+    const people = db.prepare('SELECT * FROM people').all()
+    res.json(people)
 })
 
 initDb()
