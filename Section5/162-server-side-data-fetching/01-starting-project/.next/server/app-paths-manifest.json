@@ -1,7 +1,3 @@
 {
-  "/not-found": "app/not-found.js",
-  "/icon.jpg/route": "app/icon.jpg/route.js",
-  "/(content)/news/[slug]/@modal/(.)image/page": "app/(content)/news/[slug]/@modal/(.)image/page.js",
-  "/(content)/news/[slug]/page": "app/(content)/news/[slug]/page.js",
-  "/(content)/news/[slug]/image/page": "app/(content)/news/[slug]/image/page.js"
+  "/api/news/[slug]/route": "app/api/news/[slug]/route.js"
 }

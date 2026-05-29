@@ -1,9 +1,16 @@
-export async function GET() {
-const data = await fetch('http://localhost:8000/news');
-const news = await data.json();
+import { getAllNews } from "@/lib/news";
 
-return  Response.json(news)
+export async function GET() {
+const data = await getAllNews();
+return Response.json(data)
 }
+
+// export async function GET() {
+// const data = await fetch('http://localhost:8000/news');
+// const news = await data.json();
+
+// return  Response.json(news)
+// }
 // export async function GET() {
 // const data = await fetch('http://localhost:8000/news');
 // const news = await data.json();
