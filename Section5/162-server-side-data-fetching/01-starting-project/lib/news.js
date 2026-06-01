@@ -12,7 +12,7 @@ export async function getNewsItem(slug) {
 	
 	const newsItem = db.prepare('SELECT * FROM news WHERE slug = ?').get(slug)
 	
-	await new Promise((resolve) => setTimeout(resolve, 2000))
+	await new Promise((resolve) => setTimeout(resolve, 3000))
 
 	return newsItem
 }
@@ -32,7 +32,7 @@ export async function getAvailableNewsYears() {
 		.map((year) => year.year)
 
 	await new Promise((resolve) => setTimeout(resolve, 2000))
-
+	console.log("available years:", years)
 	return years
 }
 

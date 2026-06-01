@@ -1,5 +1,5 @@
 import { getNewsItem } from '@/lib/news'
-import { notFound } from 'next/navigation'
+// import { notFound } from 'next/navigation'
 import React from 'react'
 
 async function ImagePage({params}) { 

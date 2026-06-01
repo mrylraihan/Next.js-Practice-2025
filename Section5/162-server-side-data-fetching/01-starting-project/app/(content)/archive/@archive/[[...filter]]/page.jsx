@@ -8,7 +8,7 @@ import {
 import Link from 'next/link'
 import React from 'react'
 
-function FilteredNewsPage({ params }) {
+async function FilteredNewsPage({ params }) {
 	console.log('params', params.filter)
 
 	const selectedYear = params.filter?.[0]
@@ -19,17 +19,17 @@ function FilteredNewsPage({ params }) {
 
 	let news
 
-	let archiveLinks = getAvailableNewsYears()
+	let archiveLinks = await getAvailableNewsYears()
 
 	if (selectedYear && !selectedMonth) {
-		news = getNewsForYear(selectedYear)
+		news = await getNewsForYear(selectedYear)
 		console.log('news from getNewsForYear', news)
-		archiveLinks = getAvailableNewsMonths(selectedYear)
+		archiveLinks = await getAvailableNewsMonths(selectedYear)
 		console.log("archiveLinks:", archiveLinks)
 	}
 
 	if (selectedYear && selectedMonth) {
-		news = getNewsForYearAndMonth(selectedYear, selectedMonth)
+		news = await getNewsForYearAndMonth(selectedYear, selectedMonth)
 		console.log("news from getNewsForYearAndMonth", news)
         archiveLinks = []
 		console.log("archiveLinks", archiveLinks)
@@ -42,8 +42,12 @@ function FilteredNewsPage({ params }) {
 	if (news && news.length > 0) {
 		newsContent = <NewListComp news={news} />
 	}
-
-	if(selectedYear && !getAvailableNewsYears().includes(+selectedYear) || selectedMonth && !getAvailableNewsMonths(selectedYear).includes(+selectedMonth)) {
+    const availableYears = await getAvailableNewsYears()
+	if (
+		(selectedYear && !availableYears.includes(selectedYear)) ||
+		(selectedMonth &&
+			!getAvailableNewsMonths(selectedYear).includes(selectedMonth))
+	) {
 		throw new Error('Invalid year or month selected')
 	}
 	// console.log(NewsForYear)

@@ -2,8 +2,8 @@ import NewListComp from '@/components/news-list'
 import { getLatestNews } from '@/lib/news'
 import React from 'react'
 
-function LatestNewsPage() {
-	const latestNews = getLatestNews()
+async function LatestNewsPage() {
+	const latestNews = await getLatestNews()
 	console.log(latestNews)
 	return (
 		<>
