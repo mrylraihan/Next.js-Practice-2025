@@ -5,6 +5,7 @@ const submitHandler = (e) => {
     const formData = new FormData(e.target)
     const data = Object.fromEntries(formData.entries())
     console.log(data)
+    console.log(data)
 }
 
 form.addEventListener('submit', submitHandler)
