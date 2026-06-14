@@ -1,3 +1,6 @@
+import FormSubmit from "@/components/form-submit"
+import { storePost } from "@/lib/posts"
+import { redirect } from "next/navigation"
 
 export default function NewPostPage() {
   // Server Action
@@ -5,6 +8,8 @@ export default function NewPostPage() {
 		'use server'
 		const data = Object.fromEntries(formData)
 		console.log(data)
+		await storePost({...data, userId:1, imageUrl: ""})
+		redirect('/feed')
 	}
   
   return (
@@ -29,8 +34,7 @@ export default function NewPostPage() {
 					<textarea id='content' name='content' rows='5' />
 				</p>
 				<p className='form-actions'>
-					<button type='reset'>Reset</button>
-					<button>Create Post</button>
+					<FormSubmit/>
 				</p>
 			</form>
 		</>
