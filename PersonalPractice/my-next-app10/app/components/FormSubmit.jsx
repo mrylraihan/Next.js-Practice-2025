@@ -1,10 +1,11 @@
 'use client'
 import React, { useActionState } from 'react'
 import { useFormStatus } from 'react-dom'
+import ButtonSubmit from './ButtonSubmit'
 
 function FormSubmit({num, action, defaultObj}) {
     const [data, actionHandler, isPending] = useActionState(action, defaultObj)
-    const status = useFormStatus()
+    const status = useFormStatus()//wont work because it needs to be in a child of the form 
     console.log("isPending", isPending)
     console.log('data', data)
     console.log("status",status)
@@ -18,7 +19,8 @@ function FormSubmit({num, action, defaultObj}) {
 				<label htmlFor='lastname'>last name:</label>
 				<input type='text' id='lastname' name='lastname' />
 				<br />
-				<button type='submit'>submit</button>
+				{/* <button type='submit'>submit</button> */}
+                <ButtonSubmit/>
 			</form>
 		</div>
 	)
