@@ -1,11 +1,24 @@
 'use client'
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useFormState } from 'react-dom'
 import FormSubmit from './form-submit'
 
-function PostForm({ createPost }) {
-	const [state, formAction] = useFormState(createPost, {})
+const turnOnOff = (prev, action)=>{
+	if(action.type == 'on'){
+		return {...prev, isOn:true, actionhandler: "on"}
+	}else if(action.type =='off'){
+		return {...prev, isOn:false, actionhandler: "off"}
+	}
 
+}
+
+function PostForm({ createPost }) {
+	const [stateR, dispatch] = useReducer(turnOnOff, {
+		isOn: true,
+		actionhandler: "on",
+	})
+	const [state, formAction] = useFormState(createPost, {})
+	console.log(stateR)
 	return (
 		<>
 			<h1>Create a new post</h1>
@@ -34,6 +47,11 @@ function PostForm({ createPost }) {
                 {state.errors.map(err=><li key={err}>{err}</li>)}
                 </ul>}
 			</form>
+			<div>
+				<button onClick={()=>{
+					dispatch(stateR.actionhandler == "on"?{type:'off'}:{type:'on'})
+				}}>reducer example</button>
+			</div>
 		</>
 	)
 }
