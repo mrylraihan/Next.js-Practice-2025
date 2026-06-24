@@ -36,6 +36,9 @@ function Navbar() {
 				<li>
 					<Link href='/testForm6'>Test form6</Link>
 				</li>
+				<li>
+					<Link href='/calculate'>calculate</Link>
+				</li>
 			</ul>
 		</div>
 	)
